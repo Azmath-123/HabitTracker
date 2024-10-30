@@ -6,6 +6,10 @@ const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
 const habitRoutes = require('./routes/habitRoutes');
+const { scheduleReminder } = require('./utils/reminderService');
+const { sendEmail } = require('./services/notifications/emailService');
+const logger = require('./utils/reminderLogger');
+
 
 dotenv.config();
 connectDB();
